@@ -13,7 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
     
-        let manager = SocketManager(socketURL: URL(string: "http://localhost:3000")!, config: [.log(true)])
+        let manager = SocketManager(socketURL: URL(string: "http://localhost:3000")!, config: [.log(false)])
         let socket = manager.defaultSocket
         
         socket.on(clientEvent: .connect) {data, ack in
@@ -26,5 +26,3 @@ class ViewController: UIViewController {
         socket.connect()
     }
 }
-
-
